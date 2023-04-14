@@ -1,3 +1,4 @@
 pandas
 datetime
 mojimoji
+openpyxl
