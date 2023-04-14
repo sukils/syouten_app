@@ -446,7 +446,7 @@ csv = result.to_csv().encode('cp932')#データフレームをCSVにして、
 st.download_button(label='出力結果ダウンロード', data=csv, file_name='result.csv', mime='text/csv')#そのCSVをダウンロード
 st.write('※佐川急便(チャーター便)、日通トランスポート、九州航空は含まないので別途計算します。')
 
-
+st.balloons()
 
 
 st.write('<h4>自動計算されない配送方法ファイルダウンロード</h4>', unsafe_allow_html=True)
