@@ -1,4 +1,3 @@
-# syouten_app
 pandas
 datetime
 time
