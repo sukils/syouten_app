@@ -1,0 +1,13 @@
+# syouten_app
+pandas
+openpyxl
+datetime
+time
+numpy
+os
+jaconv
+csv
+datetime
+mojimoji
+glob
+chardet
