@@ -1,5 +1,4 @@
 pandas
 datetime
 numpy
-csv
 mojimoji
