@@ -269,6 +269,8 @@ if st.checkbox('single_item,newnew_dbのマージ結果を表示'):
 main_data_df_single_item_null = main_data_df_single_item[main_data_df_single_item['卸価格'].isnull()]
 st.write('◆ single_item_卸金額不明分')
 st.write(main_data_df_single_item_null)
+csv = main_data_df_single_item_null.to_csv().encode('cp932')#データフレームをCSVにして、
+st.download_button(label='↑登録依頼ファイルダウンロード', data=csv, file_name='登録依頼1.csv', mime='text/csv')#そのCSVをダウンロード
 
 main_data_df_single_item = main_data_df_single_item[['受注番号', '顧客分類', '発送日', '配送伝票番号', '配送業者', '卸価格', '変換商品名_y', '販売数量']]
 
@@ -333,6 +335,8 @@ if st.checkbox('set_item,newnew_dbのマージ結果を表示'):
 main_data_df_set_item_null = main_data_df_set_item[main_data_df_set_item['卸価格'].isnull()]
 st.write('◆ set_item_卸金額不明分')
 st.write(main_data_df_set_item_null)
+csv = main_data_df_set_item_null.to_csv().encode('cp932')#データフレームをCSVにして、
+st.download_button(label='↑登録依頼ファイルダウンロード', data=csv, file_name='登録依頼2.csv', mime='text/csv')#そのCSVをダウンロード
 
 
 
