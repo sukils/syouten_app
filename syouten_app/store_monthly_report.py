@@ -55,15 +55,18 @@ main_data_df['変換商品名'] = main_data_df['変換商品名'].str.strip()
 main_data_df['配送伝票番号'] = main_data_df['配送伝票番号'].astype(str)
 main_data_df['配送伝票番号'].replace('.0', '')
 
+main_data_df['記事1'] = main_data_df['記事1'].astype(str)
+main_data_df['記事1'].replace('.0', '')
+
 
 main_data_df['受注番号'] = main_data_df['受注番号'].astype(str)
 
-main_data_df = main_data_df[['受注番号', '顧客分類', '発送日', '配送伝票番号', '配送業者', '変換商品名', '購入品数量' ]]
+main_data_df = main_data_df[['受注番号', '顧客分類', '発送日', '配送伝票番号', '配送業者', '変換商品名', '購入品数量', '記事1' ]]
 
 
 
 #送料自動計算できない分だけ抽出
-toll = main_data_df.loc[main_data_df['配送業者'] == '佐川急便[チャーター便]']
+#toll = main_data_df.loc[main_data_df['配送業者'] == '佐川急便[チャーター便]']
 nituu_tp = main_data_df.loc[main_data_df['配送業者'] == '日通トランスポート']
 kyushu_k = main_data_df.loc[main_data_df['配送業者'] == '九州航空']
 
@@ -285,6 +288,8 @@ main_data_df_single_item['商品代金'] = main_data_df_single_item['卸価格']
 #single運賃情報をマージ
 main_data_df_single_item_ship = pd.merge(main_data_df_single_item_ship, sagawa, left_on='配送伝票番号', right_on='お問合せNO', how='left')
 
+main_data_df_single_item_ship = pd.merge(main_data_df_single_item_ship, sagawa, left_on='記事1', right_on='お問合せNO', how='left')
+
 
 
 main_data_df_single_item_ship = pd.merge(main_data_df_single_item_ship, seinou, left_on='配送伝票番号', right_on='原票No.', how='left')
@@ -352,6 +357,8 @@ main_data_df_set_item['商品代金'] = main_data_df_set_item['卸価格'] * mai
 
 #set運賃情報をマージ
 main_data_df_set_item_ship = pd.merge(main_data_df_set_item_ship, sagawa, left_on='配送伝票番号', right_on='お問合せNO', how='left')
+
+main_data_df_set_item_ship = pd.merge(main_data_df_set_item_ship, sagawa, left_on='記事1', right_on='お問合せNO', how='left')
 
 main_data_df_set_item_ship = pd.merge(main_data_df_set_item_ship, seinou, left_on='配送伝票番号', right_on='原票No.', how='left')
 
