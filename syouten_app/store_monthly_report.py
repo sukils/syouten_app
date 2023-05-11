@@ -463,13 +463,7 @@ st.balloons()
 
 st.write('<h4>自動計算されない配送方法ファイルダウンロード</h4>', unsafe_allow_html=True)
 
-'''
-st.write('佐川急便(チャーター)')
-st.write(toll)
-csv = toll.to_csv().encode('cp932')#データフレームをCSVにして、
-st.download_button(label='↑佐川急便(チャーター便)データダウンロード', data=csv, file_name='toll.csv', mime='text/csv')#そのCSVをダウンロード
 
-'''
 
 st.write(kyushu_k)
 csv = kyushu_k.to_csv().encode('cp932')#データフレームをCSVにして、
