@@ -436,7 +436,7 @@ item_price_total = item_price_total.reset_index(drop=False)
 
 result = pd.merge(item_price_total_ship, item_price_total, left_on='顧客分類_x', right_on='顧客分類', )
 
-
+print(result)
 result = result[['顧客分類_x', '販売数量', '商品代金', '運賃' ]]
 
 result.rename(columns={'顧客分類_x':'顧客分類'}, inplace=True)
