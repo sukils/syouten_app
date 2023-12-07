@@ -4,6 +4,19 @@ import mojimoji
 
 
 
+hide = """
+<style>
+div[data-testid="stConnectionStatus"] {
+    display: none !important;
+}
+</style>
+"""
+
+st.markdown(hide, unsafe_allow_html=True)
+
+
+
+
 st.write('<h3>承天貿易有限会社月次ストア毎集計システム</h3>', unsafe_allow_html=True)
 st.write('注意：ゆうパック代金は明細が出ないため中央値での概算となります。', unsafe_allow_html=True)
 
